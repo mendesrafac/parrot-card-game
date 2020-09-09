@@ -1,8 +1,6 @@
-var cards = Array.from(document.querySelectorAll(".card"));
-
-cards.forEach(function (card) { //not working yet
+cards.forEach(function (card) {
     card.addEventListener('click', function() {
-        document.querySelector(".front-face").classList.add(".rotate-front-face");
-        document.querySelector(".back-face").classList.add(".rotate-back-face");
+        card.querySelector(".front-face").classList.add("rotate-front-face");
+        card.querySelector(".back-face").classList.add("rotate-back-face");
     }
 )});
