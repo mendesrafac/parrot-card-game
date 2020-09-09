@@ -1,0 +1,23 @@
+:root {
+    --title-color: #7ab08e;
+    --background-color: #effabf;
+    --card-color: #a7e9af;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--background-color);
+}
+header {
+    display: flex;
+    place-items: center;
+    justify-content: center;
+    margin: 50px 0;
+}
+h1 {
+    color: var(--title-color);
+}
