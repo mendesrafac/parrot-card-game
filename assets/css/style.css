@@ -12,6 +12,12 @@ body {
     font-family: 'Roboto', sans-serif;
     background-color: var(--background-color);
 }
+main {
+    display: flex;
+    place-items: center;
+    margin: 0 50px;
+    flex-wrap: wrap;
+}
 header {
     display: flex;
     place-items: center;
