@@ -4,7 +4,6 @@
     position: relative;
     margin: 10px;
     flex-shrink: 0;
-    display: none;
 }
 .card .front-face img {
     width: 150px;
