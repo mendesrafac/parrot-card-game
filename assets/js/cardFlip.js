@@ -1,45 +1,63 @@
 var getCards = Array.from(document.querySelectorAll(".card"));
 
-getCards.forEach(function (card) {
-    card.addEventListener('click', function() {
-        card.querySelector(".front-face").classList.add("rotate-front-face");
-        card.querySelector(".back-face").classList.add("rotate-back-face");
-    }
-)});
+var hasFlipped = false;
+var previousCard, currentCard;
+var firstAlt, secondAlt;
 
-/*let hasFlipped = false;
-let firstCard, secondCard;
+/*  Had trouble removing click function from matched cards,
+    found a solution at https://youtu.be/ZniVgo8U7ek by
+    implementing event function outside the loop, this way
+    it's possible to use removeEventListener(). */
 
-function flippedCondition () {
+getCards.forEach(card => card.addEventListener('click', flipCondition));
+
+function flipCondition () {
     
-    this.querySelector(".front-face").classList.add("rotate-front-face");
-    this.querySelector(".back-face").classList.add("rotate-back-face");
-        
+    flipCard(this);
+    
     if (!hasFlipped) {
+
         hasFlipped = true;
-        firstCard = this;
-        var firstAlt = firstCard.querySelector(".back-face img").alt;
-    } else {
+        previousCard = this;
+
+        /* gets alt attribute from this card */
+        firstAlt = previousCard.querySelector(".back-face img").getAttribute("alt");
+
+    }  else {
+
         hasFlipped = false;
-        secondCard = this;
-        var secondAlt = secondCard.querySelector(".back-face img").alt;
-    }
-    
-    if (firstAlt === secondAlt) {
-        firstCard.removeEventListener('click', flippedCondition);
-        secondCard.removeEventListener('click', flippedCondition);
-    } else {
-        setTimeout (function (){
-            /*unflipCard(previousCard);
-            unflipCard(currentCard);
-            firstCard.querySelector(".front-face").classList.remove("rotate-front-face");
-            firstCard.querySelector(".back-face").classList.remove("rotate-back-face");
+        currentCard = this;
 
-            secondCard.querySelector(".front-face").classList.remove("rotate-front-face");
-            secondCard.querySelector(".back-face").classList.remove("rotate-back-face");
+        /* gets alt attribute from this card */
+        secondAlt = currentCard.querySelector(".back-face img").getAttribute("alt");
+        
+        /* if they are the same */
+        if (firstAlt === secondAlt) {
 
-        }, 1000);
+            /* removes click function from event so they cant be
+               flipped anymore */
+            previousCard.removeEventListener('click', flipCondition);
+            currentCard.removeEventListener('click', flipCondition);
+        
+        } else {
+
+            /* unflip both cards with 1second delay */
+            setTimeout (function (){
+                
+                unflipCard(previousCard);
+                unflipCard(currentCard);
+
+            }, 1000);
+        }
     }
 };
 
-getCards.forEach(card => card.addEventListener('click', flippedCondition));*/
+function flipCard(element) {
+    element.querySelector(".front-face").classList.add("rotate-front-face");
+    element.querySelector(".back-face").classList.add("rotate-back-face");
+}
+
+function unflipCard(element) {
+    element.querySelector(".front-face").classList.remove("rotate-front-face");
+    element.querySelector(".back-face").classList.remove("rotate-back-face");
+}

@@ -24,16 +24,16 @@ function createCard () {
     card.appendChild(back);
     front.innerHTML = "<img src='./assets/images/front.png' alt='parrot'>";   
     /* Gets random position of imgPaths */    
-    var randomPos = Math.floor(Math.random()*imgPaths.length);
-        
+    var randomPos = Math.floor(Math.random()*imgPaths.length);    
     var backImg = imgPaths[randomPos];
+
     /* add back image to the card */    
     back.innerHTML = backImg;
 
     /*  removes the back image path from the imgPaths array
         so it can't be selected more than once */
     imgPaths = imgPaths.filter(item => item != backImg);
-
+    
     return card;
 }
 
