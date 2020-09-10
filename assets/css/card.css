@@ -8,11 +8,9 @@
 .card .front-face img {
     width: 150px;
 }
-
-.visible {
-    display: initial;
+.card .back-face img {
+    width: 100px;
 }
-
 .face {
     width: 100%;
     height: 100%;
