@@ -3,6 +3,8 @@ var getCards = Array.from(document.querySelectorAll(".card"));
 var hasFlipped = false;
 var previousCard, currentCard;
 var firstAlt, secondAlt;
+var flipCount = 0;
+var missingPairs = numPairs;
 
 /*  Had trouble removing click function from matched cards,
     found a solution at https://youtu.be/ZniVgo8U7ek by
@@ -38,6 +40,7 @@ function flipCondition () {
                flipped anymore */
             previousCard.removeEventListener('click', flipCondition);
             currentCard.removeEventListener('click', flipCondition);
+            missingPairs--;
         
         } else {
 
@@ -50,11 +53,13 @@ function flipCondition () {
             }, 1000);
         }
     }
+    gameCleared();
 };
 
 function flipCard(element) {
     element.querySelector(".front-face").classList.add("rotate-front-face");
     element.querySelector(".back-face").classList.add("rotate-back-face");
+    flipCount++;
 }
 
 function unflipCard(element) {
