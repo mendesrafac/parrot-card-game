@@ -1,6 +1,7 @@
 var getCards = Array.from(document.querySelectorAll(".card"));
 
 var hasFlipped = false;
+var firstTurn = true;
 var previousCard, currentCard;
 var firstAlt, secondAlt;
 var flipCount = 0;
@@ -15,6 +16,13 @@ getCards.forEach(card => card.addEventListener('click', flipCondition));
 
 function flipCondition () {
     
+    /* start timer when flipping
+       the first card of the game */
+    if (firstTurn) {
+        firstTurn = false;
+        timerStart();
+    }
+
     flipCard(this);
     
     if (!hasFlipped) {

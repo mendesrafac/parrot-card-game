@@ -1,3 +1,9 @@
+# projeto-04-parrot-card-game
+
+https://mendesrafac.github.io/projeto-04-parrot-card-game
+
+---
+
 # Descrição
 
 Seu segundo projeto com JavaScript será a implementação do jogo Parrot Card Game, um jogo da memória temático com aleatoridade, efeitos e transição, responsividade e papagaios dançantes!
@@ -34,9 +40,9 @@ Todas as instruções estão em: [https://github.com/bootcamp-ra/projeto-04-parr
         - [x]  Caso seja uma carta diferente da primeira carta virada, o usuário errou. Nesse caso, o jogo deve **aguardar 1 segundo** e então virar as duas cartas para baixo novamente
     - [x]  **Dica**: se quiser fazer o efeito 3D da carta virando, você pode ver o CSS necesśario em: [https://repl.it/@BootcampRespond/FlippedCards#index.html](https://repl.it/@BootcampRespond/FlippedCards#index.html) . Só se atente que nesse exemplo a carta vira ao passar o mouse. No caso do jogo, seria ao clicar.
 - Fim do Jogo
-    - [ ]  Quando o usuário terminar de virar todas as cartas corretamente, deverá ser exibido um alert com a mensagem **"Você ganhou em X jogadas!"** sendo X a quantidade de vezes que o usuário virou uma carta no jogo.
+    - [x]  Quando o usuário terminar de virar todas as cartas corretamente, deverá ser exibido um alert com a mensagem **"Você ganhou em X jogadas!"** sendo X a quantidade de vezes que o usuário virou uma carta no jogo.
 
 # Bônus (opcional)
 
-- [ ]  Coloque um relógio no topo superior direito da tela, contando quantos segundos já passaram desde o início do jogo. Ao final, informe na mensagem de vitória a quantidade de segundos.
-- [ ]  Ao final do jogo, pergunte com um prompt se o usuário gostaria de reiniciar a partida. Se ele responder sim, comece novamente o jogo perguntando a quantidade de cartas.
+- [x]  Coloque um relógio no topo superior direito da tela, contando quantos segundos já passaram desde o início do jogo. Ao final, informe na mensagem de vitória a quantidade de segundos.
+- [x]  Ao final do jogo, pergunte com um prompt se o usuário gostaria de reiniciar a partida. Se ele responder sim, comece novamente o jogo perguntando a quantidade de cartas.
