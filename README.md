@@ -1,6 +1,6 @@
-# projeto-04-parrot-card-game
+# projeto04-parrot-card-game
 
-https://mendesrafac.github.io/projeto-04-parrot-card-game
+https://mendesrafac.github.io/parrot-card-game
 
 ---
 
